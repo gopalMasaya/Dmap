@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapbox with p5.js</title>
+
+  <!-- Mapbox GL JS -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Turf.js/6.5.0/turf.min.js"></script>
+  <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.2/mapbox-gl-draw.js'></script>
+
+  <!-- p5.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+ 
+  
+  
+  <div id="canvas-container"></div>
+
+  <style>
+ .custom-popup {
+    transform: translate(-50px, 0px);
+}
+
+	#ui-container {
+  position: absolute;
+  z-index: 3; /* Above the canvas */
+  /* Position your UI elements as needed */
+  top:50%;
+}
+    body {
+      margin: 0;
+      overflow: hidden;
+      height: 100vh;
+	  	
+    }
+    #map-container {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 80%;
+      height: 100%;
+	  z-index:0;
+    }
+    #canvas-container {
+	z-index:-1;	
+	 
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 80%;
+      height: 100%;
+      pointer-events: none; /* Allow interactions with the map */
+    }
+  </style>
+</head>
+<body>
+  <div id="map-container"></div> <!-- Map container -->
+  <div id="canvas-container"></div> <!-- Canvas container -->
+
+  <!-- p5.js Sketch -->
+  <script src="sketch.js"></script>
+</body>
+</html>
